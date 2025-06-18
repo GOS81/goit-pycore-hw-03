@@ -5,12 +5,16 @@
 import random
 
 def get_numbers_ticket(min, max, quantity):
-    numbers = list(range(min, max+1))
-    print("Список чисел", numbers)
-    list_numbers = random.sample(numbers, quantity)
-    print("Список випадкових чисел зі списку", list_numbers)
-    return list_numbers
+    if 1 <= min <=1000 and 1 <= max <=1000 and min < max and quantity < max - min:
+        numbers = list(range(min, max+1))
+        print("Список чисел", numbers)
+        list_numbers = random.sample(numbers, quantity)
+        print("Список випадкових чисел зі списку", list_numbers)
+        return list_numbers
 
 lottery_numbers = get_numbers_ticket(1, 49, 6)
-lottery_numbers.sort() 
-print("Ваші лотерейні числа:", lottery_numbers)
+try:
+    lottery_numbers.sort()
+    print("Ваші лотерейні числа:", lottery_numbers)
+except:
+    print("Enter correct data")    
